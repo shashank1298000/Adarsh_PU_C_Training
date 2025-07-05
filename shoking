@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Linear search function with thoda swag
+int linearSearchMast(int arr[], int size, int target) {
+    printf("Bhai, %d ko dhoondh rahe hain, thodi der chill kar!\n", target);
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            printf("Arey wah! %d mil gaya, bindaas index %d pe!\n", target, i);
+            return i; // Swaggy index return
+        }
+    }
+    printf("Oops! %d toh bhaag gaya, array mein nahi hai!\n", target);
+    return -1; // Jab nahi mila toh thoda sad vibe
+}
+
+int main() {
+    // Ek thoda cool array
+    int arr[] = {12, 7, 23, 4, 15, 9, 1};
+    int size = sizeof(arr) / sizeof(arr[0]); // Size nikal lo bhai
+    int target;
+    
+    printf("Bolo bhai, kaunsa number dhoondhna hai? ");
+    scanf("%d", &target);
+    
+    // Swaggy search shuru
+    int result = linearSearchMast(arr, size, target);
+    
+    if (result != -1) {
+        printf("Final dhamaka: %d index %d pe chill kar raha hai!\n", target, result);
+    } else {
+        printf("Arre yaar, %d ne toh dil tod diya, nahi mila!\n", target);
+    }
+    
+    printf("Bas, ho gaya show! 😎\n");
+    return 0;
+}
