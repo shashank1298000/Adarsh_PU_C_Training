@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+// Binary search function
+int binarysearch(int arr[], int size, int key) {
+    int low = 0;
+    int high = size - 1;
+    
+    while (low <= high) {
+        int mid = low + (high - low) / 2; // Overflow avoid karne ke liye aisa likha
+        if (arr[mid] == key) {
+            return mid; // Key mil gaya, index return karo
+        } else if (arr[mid] < key) {
+            low = mid + 1; // Right half mein jao
+        } else {
+            high = mid - 1; // Left half mein jao
+        }
+    }
+    return -1; // Key nahi mila
+}
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50, 60}; // Sorted array
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key;
+    
+    printf("Enter the element to search: ");
+    scanf("%d", &key);
+    
+    int result = binarysearch(arr, size, key);
+    
+    if (result != -1) {
+        printf("Bhai, element %d index %d pe mil gaya!\n", key, result);
+    } else {
+        printf("Arre, element %d array mein nahi hai!\n", key);
+    }
+    
+    return 0;
